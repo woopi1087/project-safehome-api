@@ -1,2 +1,39 @@
 # project-safehome-api
 project-safehome-api
+
+- 패키지 구조
+    - src/
+        - main/
+            - kotlin/
+                - com.woopi.safehome/
+                    - domain/ # 서비스 도메인 관련 클래스
+                        - domainA/ # 도메인 A 관련 클래스
+                            - adapter/ # 도메인 A 어댑터 클래스
+                                - inbound/ # 도메인 A 인바운드 어댑터 클래스
+                                - outbound/ # 도메인 A 아웃바운드 어댑터
+                            - application/ # 도메인 A 애플리케이션 서비스 클래스
+                                - port/ # 도메인 A 포트 인터페이스
+                                    - inbound/ # 도메인 A 인바운드 포트 인터페이스
+                                    - outbound/ # 도메인 A 아웃바운드 포트 인터페이스
+                                - usecase/ # 도메인 A 유스케이스 클래스 (구현체)
+                            - model/ # 도메인 A 모델 클래스
+                        - domainB/ # 도메인 B 관련 클래스
+                            - ...
+                    - global/ # 전역 설정 및 유틸리티 클래스
+                        - config/ # 전역 설정 클래스
+                        - exception/ # 전역 예외 처리 클래스
+                        - util/ # 전역 유틸리티 클래스 
+                        - ...
+            - resources/
+                - init/
+                    - h2db/
+                        - schema.sql # H2 데이터베이스 스키마 초기화 파일
+                        - data.sql # H2 데이터베이스 초기화 데이터 파일
+                    - mysql/
+                        - schema.sql # MySQL 데이터베이스 스키마 초기화 파일
+                        - data.sql # MySQL 데이터베이스 초기화 데이터 파일
+                - application.yml # 애플리케이션 설정 파일
+                - application-db.yml # 데이터베이스 설정 파일
+                - application-server.yml # 서버 설정 파일
+                - application-web.yml # 웹 설정 파일
+                - ...
