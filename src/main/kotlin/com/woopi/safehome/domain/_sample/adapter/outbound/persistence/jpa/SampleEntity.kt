@@ -12,15 +12,18 @@ import java.time.LocalDateTime
 @Table(name = "samples")
 class SampleEntity(
 
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null,
 
+    var name: String,
 
+    var code: String,
 
+    var description: String? = null,
 
+    @Column(name = "order_no")
+    var orderNo: Int = 0,
 
     var isDeleted: Boolean = false,
     var createdId: Long,
