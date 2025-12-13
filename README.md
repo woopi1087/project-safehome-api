@@ -1,4 +1,5 @@
 # project-safehome-api
+
 project-safehome-api
 
 - 패키지 구조
@@ -10,7 +11,14 @@ project-safehome-api
                         - domainA/ # 도메인 A 관련 클래스
                             - adapter/ # 도메인 A 어댑터 클래스
                                 - inbound/ # 도메인 A 인바운드 어댑터 클래스
+                                    - web/ # 도메인 A 웹 어댑터
+                                        - dto # 도메인 A DTO 클래스
+                                    - ...
                                 - outbound/ # 도메인 A 아웃바운드 어댑터
+                                    - persistence/ # 도메인 A 영속성 어댑터
+                                        - entity/ # 도메인 A 엔티티 클래스
+                                        - repository/ # 도메인 A 리포지토리 인터페이스 및 구현체
+                                    - ...
                             - application/ # 도메인 A 애플리케이션 서비스 클래스
                                 - port/ # 도메인 A 포트 인터페이스
                                     - inbound/ # 도메인 A 인바운드 포트 인터페이스
@@ -22,7 +30,7 @@ project-safehome-api
                     - global/ # 전역 설정 및 유틸리티 클래스
                         - config/ # 전역 설정 클래스
                         - exception/ # 전역 예외 처리 클래스
-                        - util/ # 전역 유틸리티 클래스 
+                        - util/ # 전역 유틸리티 클래스
                         - ...
             - resources/
                 - init/

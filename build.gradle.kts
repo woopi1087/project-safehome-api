@@ -20,12 +20,23 @@ repositories {
 	mavenCentral()
 }
 
+val springdocVersion = "2.8.9"
+
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+	// Swagger
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$springdocVersion")
+
+	// h2 database
 	runtimeOnly("com.h2database:h2")
+
+//	// MariaDB JDBC
+//	runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")

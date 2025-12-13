@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: safehome
+  config:
+    import:
+      - classpath:application-db.yml
