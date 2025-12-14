@@ -21,4 +21,11 @@ class SampleEntity(
     @Column(name = "order_no")
     var orderNo: Int = 0,
 
-): BaseEntity()
+): BaseEntity() {
+
+    fun changeName(name: String) {
+        require(name.isNotBlank())
+        this.name = name
+    }
+
+}

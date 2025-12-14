@@ -14,9 +14,9 @@ CREATE TABLE IF NOT EXISTS samples (
     UNIQUE (code)
 );
 
-CREATE INDEX IF NOT EXISTS idx_sample_name ON sample(name);
-CREATE INDEX IF NOT EXISTS idx_sample_order ON sample(order_no);
-CREATE INDEX IF NOT EXISTS idx_sample_deleted ON sample(is_deleted);
+CREATE INDEX IF NOT EXISTS idx_samples_name ON samples(name);
+CREATE INDEX IF NOT EXISTS idx_samples_order ON samples(order_no);
+CREATE INDEX IF NOT EXISTS idx_samples_deleted ON samples(is_deleted);
 
 -- 셈플 상세 테이블
 CREATE TABLE IF NOT EXISTS sample_details (
@@ -30,6 +30,6 @@ CREATE TABLE IF NOT EXISTS sample_details (
     updated_at TIMESTAMP NULL DEFAULT NULL COMMENT '수정 시간'
 );
 
-CREATE INDEX IF NOT EXISTS idx_detail_sample_id ON sample_detail(sample_id);
-CREATE INDEX IF NOT EXISTS idx_detail_detail_value ON sample_detail(detail_value);
-CREATE INDEX IF NOT EXISTS idx_detail_deleted ON sample_detail(is_deleted);
+CREATE INDEX IF NOT EXISTS idx_sample_details_sample_id ON sample_details(sample_id);
+CREATE INDEX IF NOT EXISTS idx_sample_details_detail_value ON sample_details(detail_value);
+CREATE INDEX IF NOT EXISTS idx_sample_details_deleted ON sample_details(is_deleted);
