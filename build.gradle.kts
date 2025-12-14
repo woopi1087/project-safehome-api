@@ -20,6 +20,7 @@ repositories {
 	mavenCentral()
 }
 
+val commonLang3Version = "3.18.0"
 val springdocVersion = "2.8.9"
 val kotestVersion = "5.9.1"
 val kotestSpringExtensionVersion = "1.3.0"
@@ -29,6 +30,9 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+	// Apache Commons Lang
+	implementation("org.apache.commons:commons-lang3:$commonLang3Version")
 
 	// Swagger
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$springdocVersion")
