@@ -10,7 +10,7 @@ import redis.embedded.RedisServer
 import java.io.IOException
 import java.net.ServerSocket
 
-@Profile("local", "test")  // test 프로파일도 추가
+@Profile("local", "test")
 @Configuration
 class EmbeddedRedisConfig(
     @Value("\${spring.data.redis.port:6379}")
@@ -28,13 +28,13 @@ class EmbeddedRedisConfig(
 
         redisServer = RedisServer(availablePort)
         redisServer?.start()
-        println("✅ Embedded Redis started on port $availablePort")
+        println("Embedded Redis started on port $availablePort")
     }
 
     @PreDestroy
     fun stopRedis() {
         redisServer?.stop()
-        println("🛑 Embedded Redis stopped")
+        println("Embedded Redis stopped")
     }
 
     private fun isPortInUse(port: Int): Boolean {
