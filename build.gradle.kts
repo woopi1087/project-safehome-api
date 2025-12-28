@@ -28,7 +28,7 @@ val kotestSpringExtensionVersion = "1.3.0"
 val coroutineCoreVersion = "1.10.2"
 val coroutineReactorVersion = "1.10.2"
 
-val embeddedRedisVersion = "1.4.3"
+val embeddedRedisVersion = "0.7.3"
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
@@ -54,7 +54,7 @@ dependencies {
 
 	// Redis, embedded redis
 	implementation("org.springframework.boot:spring-boot-starter-data-redis")
-	testImplementation("com.github.codemonstur:embedded-redis:$embeddedRedisVersion")
+	implementation("it.ozimov:embedded-redis:${embeddedRedisVersion}")
 
 	// Swagger
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$springdocVersion")
