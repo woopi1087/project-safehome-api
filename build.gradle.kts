@@ -43,6 +43,9 @@ dependencies {
 //	// MariaDB JDBC
 //	runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
 
+	// Swagger
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$springdocVersion")
+
 	// kotest
 	testImplementation(platform("io.kotest:kotest-bom:$kotestVersion"))
 	testImplementation("io.kotest:kotest-framework-engine")
