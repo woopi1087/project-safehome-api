@@ -15,7 +15,7 @@ abstract class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null
-        protected set
+        internal set
 
     @Column(name = "is_deleted", nullable = false)
     var isDeleted: Boolean = false

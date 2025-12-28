@@ -4,10 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface SampleRepository: JpaRepository<SampleEntity, Long> {
-
-    fun findByIsDeletedFalse(): List<SampleEntity>
-
-    fun findByIdAndIsDeletedFalse(id: Long): SampleEntity?
-
+interface SampleDetailRepository: JpaRepository<SampleDetailEntity, Long> {
 }

@@ -58,7 +58,7 @@ sealed class ApiResponse<out T> {
     data class Error(
         val code: String,                               // 에러 코드 (예: "USER_NOT_FOUND")
         override val message: String,                   // 에러 메시지 (필수)
-        val details: Map<String, Any>? = null          // 추가 상세 정보 (선택적)
+        val details: Any? = null          // 추가 상세 정보 (선택적)
     ) : ApiResponse<Nothing>()  // Nothing: "데이터 없음"을 타입으로 표현
     // Nothing: Kotlin의 특수 타입, 모든 타입의 하위 타입
     // "이 에러 응답은 data 필드를 가지지 않는다"를 타입으로 표현
@@ -75,7 +75,7 @@ sealed class ApiResponse<out T> {
         fun error(
             code: String,
             message: String,
-            details: Map<String, Any>? = null
+            details: Any? = null
         ): Error = Error(code, message, details)
     }
 
