@@ -52,9 +52,12 @@ dependencies {
 //	// MariaDB JDBC
 //	runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
 
-	// Redis, embedded redis
+	// Redis, (embedded redis - 로깅 충돌을 일으킬 수 있는 의존성 제외)
 	implementation("org.springframework.boot:spring-boot-starter-data-redis")
-	implementation("it.ozimov:embedded-redis:${embeddedRedisVersion}")
+	implementation("it.ozimov:embedded-redis:${embeddedRedisVersion}") {
+		exclude(group = "org.slf4j", module = "slf4j-simple")
+		exclude(group = "commons-logging", module = "commons-logging")
+	}
 
 	// Swagger
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$springdocVersion")
