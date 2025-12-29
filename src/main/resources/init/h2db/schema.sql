@@ -33,3 +33,22 @@ CREATE TABLE IF NOT EXISTS sample_details (
 CREATE INDEX IF NOT EXISTS idx_sample_details_sample_id ON sample_details(sample_id);
 CREATE INDEX IF NOT EXISTS idx_sample_details_detail_value ON sample_details(detail_value);
 CREATE INDEX IF NOT EXISTS idx_sample_details_deleted ON sample_details(is_deleted);
+
+-- 분석 job 테이블
+CREATE TABLE IF NOT EXISTS analysis_jobs (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT 'ID',
+    job_id BIGINT NOT NULL COMMENT '작업 ID',
+    file_name VARCHAR(255) NOT NULL COMMENT '파일명',
+    file_size BIGINT NOT NULL COMMENT '파일 크기',
+    status VARCHAR(50) NOT NULL COMMENT '상태(예: PENDING, IN_PROGRESS, COMPLETED, FAILED)',
+    result TEXT NULL COMMENT '분석 결과 JSON',
+    description TEXT NULL COMMENT '설명 (에러메시지 등)',
+    is_deleted BOOLEAN NOT NULL DEFAULT FALSE COMMENT '삭제 여부',
+    created_id BIGINT NOT NULL COMMENT '생성자 ID',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '생성 시간',
+    updated_id BIGINT NULL COMMENT '수정자 ID',
+    updated_at TIMESTAMP NULL DEFAULT NULL COMMENT '수정 시간'
+);
+
+CREATE INDEX IF NOT EXISTS idx_analysis_jobs_job_id ON analysis_jobs(job_id);
+CREATE INDEX IF NOT EXISTS idx_analysis_jobs_status ON analysis_jobs(status);
