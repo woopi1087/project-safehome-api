@@ -37,7 +37,7 @@ CREATE INDEX IF NOT EXISTS idx_sample_details_deleted ON sample_details(is_delet
 -- 분석 job 테이블
 CREATE TABLE IF NOT EXISTS analysis_jobs (
     id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT 'ID',
-    job_id BIGINT NOT NULL COMMENT '작업 ID',
+    job_id VARCHAR(255) NOT NULL COMMENT '작업 ID(UUID)',
     file_name VARCHAR(255) NOT NULL COMMENT '파일명',
     file_size BIGINT NOT NULL COMMENT '파일 크기',
     status VARCHAR(50) NOT NULL COMMENT '상태(예: PENDING, IN_PROGRESS, COMPLETED, FAILED)',
