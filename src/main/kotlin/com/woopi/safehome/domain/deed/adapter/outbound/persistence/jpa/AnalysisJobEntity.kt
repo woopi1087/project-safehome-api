@@ -1,34 +1,35 @@
 package com.woopi.safehome.domain.deed.adapter.outbound.persistence.jpa
 
-import com.woopi.safehome.global.enums.AnalysisJobStatus
+import com.woopi.safehome.global.enums.AnalysisStep
+import com.woopi.safehome.global.enums.JobStatus
 import com.woopi.safehome.global.`object`.BaseEntity
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.EnumType
-import jakarta.persistence.Enumerated
-import jakarta.persistence.Table
+import jakarta.persistence.*
 
 @Entity
 @Table(name = "analysis_jobs")
 class AnalysisJobEntity(
 
-    @Column(name = "job_id" )
+    @Column(name = "job_id")
     var jobId: String,
 
-    @Column(name = "file_name" )
+    @Column(name = "file_name")
     var fileName: String,
 
-    @Column(name = "file_size" )
+    @Column(name = "file_size")
     var fileSize: Long,
 
-    @Column(name = "status" )
+    @Column(name = "status")
     @Enumerated(EnumType.STRING)
-    var status: AnalysisJobStatus,
+    var status: JobStatus,
 
-    @Column(name = "result" )
+    @Column(name = "step")
+    @Enumerated(EnumType.STRING)
+    var step: AnalysisStep? = null,
+
+    @Column(name = "result")
     var result: String? = null,
 
-    @Column(name = "description" )
+    @Column(name = "description")
     var description: String? = null,
 
     ) : BaseEntity() {

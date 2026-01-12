@@ -41,6 +41,7 @@ CREATE TABLE IF NOT EXISTS analysis_jobs (
     file_name VARCHAR(255) NOT NULL COMMENT '파일명',
     file_size BIGINT NOT NULL COMMENT '파일 크기',
     status VARCHAR(50) NOT NULL COMMENT '상태(예: PENDING, IN_PROGRESS, COMPLETED, FAILED)',
+    step VARCHAR(100) NULL COMMENT '현재 단계(예 : PDF_PARSING, LLM_ANALYSIS, POST_PROCESSING)',
     result TEXT NULL COMMENT '분석 결과 JSON',
     description TEXT NULL COMMENT '설명 (에러메시지 등)',
     is_deleted BOOLEAN NOT NULL DEFAULT FALSE COMMENT '삭제 여부',
@@ -52,3 +53,4 @@ CREATE TABLE IF NOT EXISTS analysis_jobs (
 
 CREATE INDEX IF NOT EXISTS idx_analysis_jobs_job_id ON analysis_jobs(job_id);
 CREATE INDEX IF NOT EXISTS idx_analysis_jobs_status ON analysis_jobs(status);
+CREATE INDEX IF NOT EXISTS idx_analysis_jobs_step ON analysis_jobs(step);

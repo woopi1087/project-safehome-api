@@ -29,4 +29,11 @@ class SampleInboundWebAdapter (
     fun getSampleDetails (@PathVariable id: Long): ApiResponse<SampleResponse> {
         return ApiResponse.success(sampleUseCase.getSampleDetails(id))
     }
+
+    @Operation(summary = "웹소켓 샘플", description = "웹소켓 샘플")
+    @GetMapping("/websocket")
+    fun websocketSample (): ApiResponse<String> {
+        sampleUseCase.websocketSample()
+        return ApiResponse.success("웹소켓 샘플입니다.")
+    }
 }

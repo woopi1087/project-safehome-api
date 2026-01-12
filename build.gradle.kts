@@ -49,9 +49,6 @@ dependencies {
 	// h2 database
 	runtimeOnly("com.h2database:h2")
 
-//	// MariaDB JDBC
-//	runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
-
 	// Redis, (embedded redis - 로깅 충돌을 일으킬 수 있는 의존성 제외)
 	implementation("org.springframework.boot:spring-boot-starter-data-redis")
 	implementation("it.ozimov:embedded-redis:${embeddedRedisVersion}") {
@@ -61,6 +58,9 @@ dependencies {
 
 	// Swagger
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$springdocVersion")
+
+	// WebSocket
+	implementation("org.springframework.boot:spring-boot-starter-websocket")
 
 	// kotest
 	testImplementation(platform("io.kotest:kotest-bom:$kotestVersion"))

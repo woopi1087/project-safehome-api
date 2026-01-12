@@ -6,7 +6,7 @@ import com.woopi.safehome.domain.deed.adapter.inbound.web.dto.DeedResponse
 import com.woopi.safehome.domain.deed.application.port.inbound.DeedUseCase
 import com.woopi.safehome.domain.deed.application.port.outbound.AnalysisJobPersistencePort
 import com.woopi.safehome.domain.deed.model.AnalysisJob
-import com.woopi.safehome.global.enums.AnalysisJobStatus
+import com.woopi.safehome.global.enums.JobStatus
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -37,7 +37,7 @@ class DeedUseCaseImpl (
             jobId = jobId,
             fileName = file.originalFilename ?: "unknown.pdf",
             fileSize = file.size,
-            status = AnalysisJobStatus.PENDING,
+            status = JobStatus.PENDING,
         )
 
         val savedJob = analysisJobPersistencePort.save(job)

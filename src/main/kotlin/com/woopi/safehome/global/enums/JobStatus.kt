@@ -1,6 +1,6 @@
 package com.woopi.safehome.global.enums
 
-enum class AnalysisJobStatus {
+enum class JobStatus {
     PENDING,
     IN_PROGRESS,
     COMPLETED,

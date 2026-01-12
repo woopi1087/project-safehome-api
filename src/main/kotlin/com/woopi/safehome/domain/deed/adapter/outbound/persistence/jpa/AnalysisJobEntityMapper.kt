@@ -11,6 +11,7 @@ object AnalysisJobEntityMapper {
             fileName = entity.fileName,
             fileSize = entity.fileSize,
             status = entity.status,
+            step = entity.step,
             result = entity.result,
             description = entity.description,
         )
@@ -22,6 +23,7 @@ object AnalysisJobEntityMapper {
             fileName = createModel.fileName,
             fileSize = createModel.fileSize,
             status = createModel.status,
+            step = createModel.step,
             result = createModel.result,
             description = createModel.description,
         )

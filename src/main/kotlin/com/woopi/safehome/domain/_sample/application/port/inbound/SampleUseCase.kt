@@ -30,4 +30,9 @@ interface SampleUseCase {
      */
     fun deleteSample(id: Long): SampleResponse
 
+    /**
+     * 웹소켓 샘플
+     */
+    fun websocketSample()
+
 }
