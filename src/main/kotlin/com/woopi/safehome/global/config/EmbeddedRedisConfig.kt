@@ -26,7 +26,11 @@ class EmbeddedRedisConfig(
             redisPort
         }
 
-        redisServer = RedisServer(availablePort)
+        redisServer = RedisServer.builder()
+            .port(availablePort)
+            .setting("maxheap 128mb")  // 이 줄 추가
+            .build()
+
         redisServer?.start()
         println("Embedded Redis started on port $availablePort")
     }

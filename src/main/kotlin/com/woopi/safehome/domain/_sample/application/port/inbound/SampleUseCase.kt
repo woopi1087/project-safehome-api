@@ -31,8 +31,13 @@ interface SampleUseCase {
     fun deleteSample(id: Long): SampleResponse
 
     /**
+     * 웹소켓 샘플 - Job ID 생성
+     */
+    fun getJobId(): String
+
+    /**
      * 웹소켓 샘플
      */
-    fun websocketSample()
+    fun sseSample(jobId: String)
 
 }

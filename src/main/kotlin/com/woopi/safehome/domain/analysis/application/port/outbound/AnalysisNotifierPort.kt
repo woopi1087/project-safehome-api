@@ -3,7 +3,7 @@ package com.woopi.safehome.domain.analysis.application.port.outbound
 import com.woopi.safehome.global.enums.AnalysisStep
 import com.woopi.safehome.global.enums.JobStatus
 
-interface AnalysisProgressPort {
+interface AnalysisNotifierPort {
     fun notifyStep(
         jobId: String,
         status: JobStatus,

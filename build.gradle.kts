@@ -59,9 +59,6 @@ dependencies {
 	// Swagger
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$springdocVersion")
 
-	// WebSocket
-	implementation("org.springframework.boot:spring-boot-starter-websocket")
-
 	// kotest
 	testImplementation(platform("io.kotest:kotest-bom:$kotestVersion"))
 	testImplementation("io.kotest:kotest-framework-engine")
